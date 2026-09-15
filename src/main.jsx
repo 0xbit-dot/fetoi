@@ -30,10 +30,10 @@ function LanguageProvider({ children }) {
 }
 
 const products = [
-  { name: 'Riwaaj', type: 'Traditional / Hand-finished', category: 'Traditional', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85' },
-  { name: 'Rozana', type: 'Everyday / Soft cotton', category: 'Daily wear', image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85' },
-  { name: 'Mehfil', type: 'Embroidered / Occasion', category: 'Embroidered', image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85' },
-  { name: 'Satrangi', type: 'Classic / Easy drape', category: 'Classic', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85' },
+  { name: 'Riwaaj', type: 'Traditional / Hand-finished', category: 'Traditional', image: '/images/riwaaj.jpg' },
+  { name: 'Rozana', type: 'Everyday / Soft cotton', category: 'Daily wear', image: '/images/riwaaj.jpg' },
+  { name: 'Mehfil', type: 'Embroidered / Occasion', category: 'Embroidered', image: '/images/mehfil.jpg' },
+  { name: 'Satrangi', type: 'Classic / Easy drape', category: 'Classic', image: '/images/riwaaj.jpg' },
 ];
 
 const gallery = [
@@ -41,7 +41,7 @@ const gallery = [
   { title: 'Riwaaj detail', image: products[0].image },
   { title: 'An evening edit', image: products[2].image },
   { title: 'Everyday colour', image: products[3].image },
-  { title: 'The finishing touch', image: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1000&q=85' },
+  { title: 'The finishing touch', image: '/images/process.jpg' },
   { title: 'Made to measure', image: products[0].image },
 ];
 
@@ -66,10 +66,12 @@ function GarmentStage() {
     <div className="stage-label">{t('simple')}</div>
     <button className="garment-stage photo-stage" onClick={() => setPreviewOpen(true)} onPointerMove={moveImage} onPointerLeave={resetImage} onKeyDown={(event) => { if (event.key === 'Escape') setPreviewOpen(false); }} style={{ '--image-x': `${imageOffset.x}px`, '--image-y': `${imageOffset.y}px` }} aria-label={t('detail')}>
       <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=90" alt={t('simple')} />
+        <img src="/images/riwaaj.jpg" alt={t('simple')} />
       <div className="garment-caption"><span>۰۱</span><b>RIWAAJ</b><small>گلگتی انداز · آپ کے ناپ کا</small></div>
       <span className="photo-action">{t('detail')} <ArrowUpRight size={14} /></span>
     </button>
     {previewOpen && <div className="lightbox hero-lightbox" role="dialog" aria-label={t('detail')} onClick={() => setPreviewOpen(false)}><button onClick={() => setPreviewOpen(false)} aria-label={t('close')}><X /></button><img onClick={(event) => event.stopPropagation()} src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1400&q=90" alt={t('simple')} /></div>}
+    {previewOpen && <div className="lightbox hero-lightbox" role="dialog" aria-label={t('detail')} onClick={() => setPreviewOpen(false)}><button onClick={() => setPreviewOpen(false)} aria-label={t('close')}><X /></button><img onClick={(event) => event.stopPropagation()} src="/images/riwaaj.jpg" alt={t('simple')} /></div>}
   </div>;
 }
 
